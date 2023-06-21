@@ -16,7 +16,7 @@ url_cat = lambda tag: f'https://cataas.com/cat/{tag}'
 # welcome message handler
 @bot.message_handler(commands=['start'])
 def start(message):
-    bot.send_message(message.chat.id, 'Привет! Я-какашечка! Могу высрать новости из интернета по некоторым категориям')
+    bot.send_message(message.chat.id, 'Привет! Я-какашечка! Могу прислать новости из интернета по некоторым категориям')
     getinfo(message)
 
 
