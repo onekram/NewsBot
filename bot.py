@@ -71,6 +71,10 @@ def complite_new(obj: dict) -> str:
 
 
 def contin(message):
+    """
+
+    :param message:
+    """
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     item1 = types.KeyboardButton('Вернуться')
     item2 = types.KeyboardButton('кота')
