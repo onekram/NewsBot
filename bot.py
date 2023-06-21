@@ -56,6 +56,7 @@ def getinfo(message):
 
 
 def json_request(url: str) -> dict:
+    print(url)
     response = requests.get(url)
     obj = json.loads(response.text)
     num = obj['count-articles']
