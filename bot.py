@@ -1,5 +1,3 @@
-from unicodedata import category
-
 import telebot
 import config
 import requests
@@ -7,6 +5,7 @@ import json
 import random
 from telebot import types
 
+# объект бота
 bot = telebot.TeleBot(config.TOKEN)
 
 url_news = lambda category_name: f'https://inshorts-news.vercel.app/{category_name}'
@@ -33,6 +32,7 @@ def another_message(message):
         getinfo(message)
 
 
+# выгрузка и отправка фото кота
 def get_cat(message):
     res = requests.get('https://cataas.com/api/tags')
 
@@ -55,6 +55,7 @@ def getinfo(message):
     bot.send_message(message.chat.id, 'Кликни на кнопку', reply_markup=markup)
 
 
+# обработка lson запроса
 def json_request(url: str) -> dict:
     print(url)
     response = requests.get(url)
@@ -72,10 +73,6 @@ def complite_new(obj: dict) -> str:
 
 
 def contin(message):
-    """
-
-    :param message:
-    """
     markup = types.ReplyKeyboardMarkup(resize_keyboard=True)
     item1 = types.KeyboardButton('Вернуться')
     item2 = types.KeyboardButton('кота')
